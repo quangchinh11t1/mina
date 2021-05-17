@@ -281,5 +281,9 @@ let _ =
          in
          Js.string (Yojson.Safe.to_string result_json)
 
+       method hash = Poseidon_hash.hash
+
+       method hashFieldElems = Poseidon_hash.hash_field_elems
+
        method runUnitTests () : bool Js.t = Coding.run_unit_tests () ; Js._true
     end)
