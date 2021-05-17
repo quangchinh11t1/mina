@@ -60,7 +60,8 @@ module Make (Inputs : Intf.Test.Inputs_intf) = struct
     in
     let%bind () =
       section "send a single payment between 2 untimed accounts"
-        (let amount = Currency.Amount.of_int 200_000_000 in
+        (let amount = Currency.Amount.of_int 200_000_000_000_000_000 in
+         (* let amount = Currency.Amount.of_int 200_000_000 in *)
          let fee = Currency.Fee.of_int 10_000_000 in
          let receiver = untimed_node_a in
          let%bind receiver_pub_key = Util.pub_key_of_node receiver in
